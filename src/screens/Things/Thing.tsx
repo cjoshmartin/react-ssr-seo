@@ -4,7 +4,7 @@ import {getSpeciesEmoji, LivingThing, livingThingsData} from '../../data';
 import styles from './Thing.module.css';
 import ThingCard from "../../components/ThingCard/ThingCard";
 
-
+const baseUrl = "https://cjoshmartin.github.io/react-spa-seo";
 
 export function Thing() {
     const { id } = useParams();
@@ -25,7 +25,7 @@ export function Thing() {
         <div className={styles.thingContainer}>
           <div className={styles.thing}>
             <div className={styles.leftSide}>
-              <img src={data.imgUrl} alt={data.name} />
+              <img src={ baseUrl+ data.imgUrl} alt={data.name} />
             </div>
             <div className={styles.rightSide}>
               <div className={styles.header}>
