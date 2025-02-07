@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router";
+import { HashRouter, Route, Routes } from "react-router";
 import './App.css';
 import { Home } from './screens/Home/Home';
 import { Thing } from './screens/Things/Thing';

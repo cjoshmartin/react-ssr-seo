@@ -4,12 +4,12 @@ import ThingCard from "../../components/ThingCard/ThingCard";
 import ThingContainer from "../../components/ThingContainer/ThingContainer";
 
 import styles from './Home.module.css';
-// import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 
 export function Home(props: any) {
     return (
         <div className={styles.home}>
-            {/* <Helmet prioritizeSeoTags>
+            <Helmet prioritizeSeoTags>
                 <title>Home - Living Things</title>
                 <meta property="og:title" content="Welcome to the Living Things site! Here, you will find information about all the living things in Josh's house."/>
                 <meta
@@ -23,7 +23,7 @@ export function Home(props: any) {
                 <meta name="twitter:image" content="https://cjoshmartin.github.io/react-spa-seo/luke.jpg" />
                 <meta property="og:site_name" content="Living Things" />
                 <meta property="og:locale" content="en_US" />
-            </Helmet> */}
+            </Helmet>
         <ThingContainer>
             {livingThingsData.map((thing) => {
                 return (
