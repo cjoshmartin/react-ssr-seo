@@ -2,9 +2,9 @@ import type { Config } from '@react-router/dev/config'
 
 export default {
     appDirectory: "src",
-    ssr: true,
+    // ssr: true,
     async prerender() {
-      return ["/"]
+      return ["/", "/about/:id"]
     },
 
   } satisfies Config;

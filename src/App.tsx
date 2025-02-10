@@ -5,7 +5,6 @@ import { Thing } from './screens/Things/Thing';
 function App() {
   return (
         <Routes>
-          {/* <Route path="/about/:id" element={<Thing />} /> */}
         </Routes>
   );
 }

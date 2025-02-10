@@ -6,13 +6,14 @@ import ThingCard from "../../components/ThingCard/ThingCard";
 
 const baseUrl = "https://cjoshmartin.github.io/react-spa-seo";
 
-export function Thing() {
-    const { id } = useParams();
-    let data: LivingThing | undefined;
+export async function loader({ params }) {
+  return {
+    data: livingThingsData[(params?.id as unknown as number) - 1]
+  }
+}
 
-    if(id){
-        data = livingThingsData[(id as unknown as number) - 1];
-    }
+export default function Component({loaderData}) {
+    let data: LivingThing | undefined = loaderData?.data;
 
     if(!data){
         return <h1>Thing not found</h1>
