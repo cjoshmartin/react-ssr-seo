@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router";
+import { Link, useParams, MetaArgs } from "react-router";
 import {getSpeciesEmoji, LivingThing, livingThingsData} from '../../data';
 
 import styles from './Thing.module.css';
@@ -6,13 +6,57 @@ import ThingCard from "../../components/ThingCard/ThingCard";
 
 const baseUrl = "https://cjoshmartin.github.io/react-spa-seo";
 
-export function Thing() {
-    const { id } = useParams();
-    let data: LivingThing | undefined;
+// This isn't well documented, but I thought a lot and found some helpf links online
+// appearlly cannot use `async` keyword to load metadata??????
+// https://github.com/remix-run/react-router/issues/12956
+// https://api.reactrouter.com/v7/interfaces/react_router.MetaArgs
+export function meta({params}: MetaArgs){
+    const data: LivingThing  = livingThingsData[(params?.id as unknown as number) - 1];
 
-    if(id){
-        data = livingThingsData[(id as unknown as number) - 1];
-    }
+    const title = `About ${data?.name} #${data?.id.toString().padStart(4, "0")} - Living Things`
+    return [ // such bad documentation
+      {
+        title,
+      },
+      {
+        property: 'og:title',
+        content: title,
+      },
+        {
+            property: 'twitter:title',
+            content: title,
+        },
+        {
+            property: 'twitter:card',
+            content: 'summary_large_image',
+        },
+        {
+            property: 'og:image',
+            content:  data?.imgUrl
+        },
+        {
+            property: 'twitter:image',
+            content: data?.imgUrl
+        },
+        {
+            property: 'og:site_name',
+            content: "Living Things"
+        },
+        {
+            property: 'og:locale',
+            content: "en_US"
+        },
+    ]
+}
+
+export async function loader({ params }) {
+  return {
+    data: livingThingsData[(params?.id as unknown as number) - 1]
+  }
+}
+
+export default function Component({loaderData}) {
+    let data: LivingThing | undefined = loaderData?.data;
 
     if(!data){
         return <h1>Thing not found</h1>
