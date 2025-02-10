@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 import './App.css';
 import { Home } from './screens/Home/Home';
 import { Thing } from './screens/Things/Thing';
@@ -18,12 +18,10 @@ function App() {
         tips, and personal anecdotes about each one. Whether you're a plant
         enthusiast or an animal lover, there's something here
       </p>
-      <HashRouter>
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/about/:id" element={<Thing />} />
         </Routes>
-      </HashRouter>
     </div>
   );
 }
