@@ -27,6 +27,10 @@ export function meta({params}: MetaArgs){
             content: title,
         },
         {
+            name: 'description',
+            content: `${data.name} is a living thing in Josh's house. Come learn more about it and the other things living in his house`
+        },
+        {
             property: 'twitter:card',
             content: 'summary_large_image',
         },

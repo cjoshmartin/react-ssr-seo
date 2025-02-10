@@ -26,7 +26,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-router-serve ./build/server/index.js",
+    "start": "node ./build/server/index.js",
     "dev": "react-router dev",
     "build": "react-router build",
     "serve": "vite preview"

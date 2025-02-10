@@ -22,7 +22,7 @@ export function meta({params}: MetaArgs){
             content: 'summary_large_image',
         },
         {
-            property: 'description',
+            name: 'description',
             content: "Welcome to the Living Things site! Here, you will find information about all the living things in Josh's house."
         },
         {
@@ -35,11 +35,11 @@ export function meta({params}: MetaArgs){
         },
         {
             property: 'og:image',
-            content: "https://cjoshmartin.github.io/react-spa-seo"
+            content: "https://m.media-amazon.com/images/I/71QhWAqNFOL._AC_UF1000,1000_QL80_.jpg"
         },
         {
             property: 'twitter:image',
-            content: "https://cjoshmartin.github.io/react-spa-seo"
+            content: "https://m.media-amazon.com/images/I/71QhWAqNFOL._AC_UF1000,1000_QL80_.jpg"
         },
         {
             property: 'og:site_name',

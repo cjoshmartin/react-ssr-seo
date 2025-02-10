@@ -4,6 +4,9 @@ import netlifyPlugin from '@netlify/vite-plugin-react-router'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    allowedHosts: true,
+  },
   plugins: [
     reactRouter(),
     netlifyPlugin()

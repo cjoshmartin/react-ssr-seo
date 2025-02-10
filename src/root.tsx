@@ -19,7 +19,7 @@ import {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <title>This is loading</title>
+          {/* <title>Fake Title</title> */}
           <Meta />
           <Links />
         </head>
