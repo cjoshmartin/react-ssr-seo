@@ -5,13 +5,6 @@
   "private": true,
   "dependencies": {
     "@react-router/node": "^7.1.5",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.126",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react-swc": "^3.8.0",
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
@@ -30,9 +23,9 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "vite",
+    "start": "react-router-serve ./build/server/index.js",
     "dev": "react-router dev",
-    "build": "tsc && vite build",
+    "build": "react-router build",
     "serve": "vite preview"
   },
   "eslintConfig": {
@@ -55,6 +48,10 @@
   },
   "devDependencies": {
     "@react-router/dev": "^7.1.5",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.126",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5"
   }
 }
